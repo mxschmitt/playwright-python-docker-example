@@ -1,20 +1,11 @@
 import re
 import playwright
-from playwright.sync_api import Page, expect, sync_playwright
+from playwright.sync_api import Page, expect
 import pytest
 
 
 def test_hello_world():
     assert True
-
-
-@pytest.fixture()
-def context():
-    with sync_playwright() as playwright:
-        playwright_browser = playwright.chromium.launch(headless=True)
-        new_context = playwright_browser.new_context()
-        return new_context
-
 
 def test_example_with_context_fixture(context):
     page = context.new_page()

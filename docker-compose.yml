@@ -4,5 +4,5 @@ services:
     image: example_playwright_python
     environment:
       - DEBUG=pw:browser*
-      - PWDEBUG=1
-    # build: .
+    build: .
+    init: true
